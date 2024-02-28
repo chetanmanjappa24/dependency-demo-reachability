@@ -1,25 +1,25 @@
-name: Debricked scan
+name: Debricked SCA
 
 on: [push]
 
 jobs:
-  vulnerabilities-scan-production:
+  debricked:
     runs-on: ubuntu-latest
 
+    container:
+      image: debricked/cli:latest-resolution-debian
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: debricked/actions/callgraph@v3
-      - uses: debricked/actions@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Fingerprint files
+        run: |
+          debricked callgraph
+          debricked fingerprint
+          
+      - name: Run Scan
+        run: |
+          debricked scan
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
-
-  vulnerabilities-scan-staging:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: debricked/actions/callgraph@v3
-      - uses: debricked/actions@v3
-        env:
-          DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_STAGING }}
-          DEBRICKED_URI: 'https://staging.debricked.com'
