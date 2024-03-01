@@ -23,3 +23,14 @@ jobs:
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_STAGING }}
           DEBRICKED_URI: 'https://staging.debricked.com'
+
+  vulnerabilities-scan-review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: debricked/actions/callgraph@v3
+      - uses: debricked/actions@v3
+        env:
+          DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_REVIEW }}
+          DEBRICKED_URI: 'https://review-4725-reach-qgxhlz.review.debricked.dev'
