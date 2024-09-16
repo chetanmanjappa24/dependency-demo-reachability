@@ -35,4 +35,4 @@ jobs:
       - uses: debricked/actions@v4
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_REVIEW }}
-          DEBRICKED_URI: 'https://review-0-increase-osqtok.review.debricked.dev'
+          DEBRICKED_URI: 'https://review-6831-reach-qc4gm9.review.debricked.dev'
