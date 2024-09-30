@@ -30,8 +30,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: debricked/actions/callgraph@v4
-      - run: |
-          ls
       - uses: debricked/actions@v4
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_REVIEW }}
