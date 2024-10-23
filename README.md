@@ -4,6 +4,7 @@ This is how we scan it!
 Demo project to show different ways of fixing vulnerabilities found in Maven based java project.
 
 
+
 - Run Dependency check with following Command
 
     ```mvn org.owasp:dependency-check-maven:check```
