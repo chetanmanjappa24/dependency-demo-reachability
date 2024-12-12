@@ -8,6 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - run: |
+          mvn --version
       - uses: debricked/actions/callgraph@v3
       - uses: debricked/actions@v4
         env:
