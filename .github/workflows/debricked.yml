@@ -34,5 +34,5 @@ jobs:
       - uses: debricked/actions/callgraph@v4
       - uses: debricked/actions@v4
         env:
-          DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_REVIEW }}
-          DEBRICKED_URI: 'https://review-7165-adjus-hd2qga.review.debricked.dev'
+          DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN_STAGING }}
+          DEBRICKED_URI: 'https://review-7335-postg-rt1bzk.review.debricked.dev'
